@@ -1,0 +1,211 @@
+.rs {
+  position: relative;
+  height: 75vh;
+  overflow-y: scroll;
+  z-index: 1;
+  color: white;
+  backdrop-filter: none; /* We move the blur to the pseudo element */
+  backdrop-filter: blur(12px);
+  background: transparent;
+  
+}
+
+.d::before{
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  background: 
+    
+    url('/morning.jpg') no-repeat center center / cover;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+
+
+.n::before{
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  background: 
+    
+    url('/night.jpg') no-repeat center center / cover;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+  
+
+
+.day{
+  background-color: transparent;
+  backdrop-filter: blur(77px);
+
+}
+  
+  .rs-profile {
+    padding-top: 60px;
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+  }
+  
+  .rs-profile img {
+    width: 110px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    
+  }
+  
+  .rs-profile h3 {
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 5px 0px;
+  }
+  
+  .rs-profile p {
+    font-size: 10px;
+    opacity: 80%;
+    font-weight: 300;
+  }
+  
+  .rs hr {
+    border-color: #ffffff50;
+    margin: 15px 0px;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+  
+  .tabs button {
+    flex: 1;
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px 0;
+    font-size: 12px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s, color 0.3s;
+    margin-bottom: 20px;
+  }
+  
+  .tabs button.active {
+    border-bottom: 2px solid #077EFF;
+    color: #077EFF;
+    font-weight: 500;
+  }
+  
+  /* Media Sections */
+  .rs-media {
+    padding: 0px 20px;
+    font-size: 13px;
+  }
+  
+  .media-section {
+    max-height: 180px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  .rs-media img,
+  .rs-media video {
+    width: 60px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .rs-media video {
+    object-fit: cover;
+    height: 60px;
+  }
+  
+  /* PDF Items List */
+  .pdf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 180px;
+    overflow-y: auto;
+ 
+  }
+  
+  .pdf-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a1a2e;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .pdf-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: contain;
+    background: white;
+    padding: 4px;
+  }
+  
+  .pdf-name {
+    font-size: 12px;
+    color: #46a4f1;
+    word-break: break-word;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Logout button */
+  .rs > button {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #077EFF;
+    color: white;
+    border: none;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 10px 65px;
+   
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .rs {
+      display: none;
+    }
+    .show{
+      display: block;
+      width: 100%;
+    }
+     .rs > button{
+      position: fixed;
+    }
+  }
+  
