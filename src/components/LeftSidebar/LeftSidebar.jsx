@@ -153,7 +153,7 @@ const LeftSidebar = () => {
       if (
         chatUser &&
         chatUser.userData?.id &&
-        chatUser.userData.id !== userData.id // prevent updating the current user
+        chatUser.userData.id !== userData.id
       ) {
         try {
           const userRef = doc(db, 'users', chatUser.userData.id);
@@ -170,7 +170,18 @@ const LeftSidebar = () => {
     };
 
     updateChatUserData();
-  }, [chatData]); // this will trigger whenever chatData changes
+  }, [chatData]);
+
+  // Utility: Clean markdown symbols
+  const cleanMarkdown = (text) => {
+    if (!text) return '';
+    return text
+      .replace(/```[\s\S]*?```/g, '') // code blocks
+      .replace(/`+/g, '') // inline code
+      .replace(/[*_~#>-]/g, '') // markdown chars
+      .replace(/\[(.*?)\]\(.*?\)/g, '$1') // [text](link)
+      .trim();
+  };
 
   return (
     <div className={`ls ${chatVisible ? 'hidden' : '' || rightSideBarShow ? 'hidden' : ''} ${bgSet ? 'night' : 'day'} `}>
@@ -210,7 +221,7 @@ const LeftSidebar = () => {
               <img src={item.userData.avatar} alt={item.userData.name} />
               <div>
                 <p>{item.userData.name}</p>
-                <span>{item.lastMessage.slice(0, 30)}</span>
+                <span>{cleanMarkdown(item.lastMessage).slice(0, 30)}</span>
               </div>
             </div>
           ))

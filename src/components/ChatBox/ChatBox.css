@@ -8,6 +8,10 @@
     overflow: hidden;
 }
 
+ .msg li {
+    text-align: initial;
+    margin: 10px;
+ }
 
 .night-bg-bar{
     color: white;

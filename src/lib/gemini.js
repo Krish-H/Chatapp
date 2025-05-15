@@ -9,7 +9,7 @@ const apiKey = "AIzaSyBbVPQFff6Wgtacmnny8Jr5X1SvhWPGPYs";
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-2.5-pro-exp-03-25",
+  model: "gemini-2.0-flash",
 });
 
 const generationConfig = {
@@ -41,7 +41,7 @@ async function run(prompt) {
 
   try {
     // Adjust the prompt to remove unnecessary introductions
-    const cleanPrompt = `Respond with only the direct answer. No introductions, no explanations. Format the output properly.\n\n${prompt}`;
+    const cleanPrompt = ` Format the output properly.\n\n${prompt}`;
 
     const result = await chatSession.sendMessage(cleanPrompt);
     const candidates = result.response.candidates;
