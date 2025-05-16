@@ -129,6 +129,7 @@
     justify-content: end;
     gap: 5px;
     padding: 0px 15px;
+    margin-top: 10px;
 }
 
 .r-msg {
@@ -241,11 +242,24 @@
     right: 0;
   }
 
+  .chat-input{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   .chat-user .arrow {
     display: block;
   }
 
   .chat-user .help {
     display: none;
+  }
+  .s-msg,.r-msg{
+    margin-top: 10px;
+  }
+  .chat-msg {
+    margin-bottom: 50px;
   }
 }
