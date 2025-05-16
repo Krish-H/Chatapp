@@ -222,18 +222,23 @@
 }
 
 @media (max-width: 900px) {
-    .chat-box {
-        position: fixed;
-        width: 95%;
-        justify-content: center;
-       
-    }
+  .chat-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: white; /* optional: ensure it's not transparent */
+    display: flex;
+    flex-direction: column;
+  }
 
-    .chat-user .arrow {
-        display: block;
-    }
+  .chat-user .arrow {
+    display: block;
+  }
 
-    .chat-user .help {
-        display: none;
-    }
+  .chat-user .help {
+    display: none;
+  }
 }

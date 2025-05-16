@@ -187,11 +187,22 @@
 .friends.border div span {
     color: #07fff3;
 }
-@media (max-width:900px) {
-    .ls{
-        width: 100%;
+@media (max-width: 900px) {
+    .ls {
+        width: 100vw;
+        height: 100vh; /* Full height */
+        position: fixed; /* Overlay effect */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* On top of other elements */
     }
-    .hidden{
+
+    .hidden {
         display: none;
+    }
+
+    .ls-list {
+        height: calc(100vh - 140px); /* Adjust based on nav + search bar height */
+        overflow-y: auto;
     }
 }
