@@ -264,5 +264,6 @@
   }
   .chat-msg {
     margin-bottom: 50px;
+    overflow-y: scroll;
   }
 }
