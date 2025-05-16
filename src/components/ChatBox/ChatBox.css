@@ -234,6 +234,13 @@
     flex-direction: column;
   }
 
+  .chat-user{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
   .chat-user .arrow {
     display: block;
   }
