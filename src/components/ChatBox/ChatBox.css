@@ -221,13 +221,12 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 @media (max-width: 900px) {
   html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
   }
 
   .chat-box {
@@ -236,10 +235,10 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: white;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    background-color: white;
+    z-index: 999;
   }
 
   .chat-user {
@@ -247,8 +246,8 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
     background-color: inherit;
+    z-index: 1000;
   }
 
   .chat-input {
@@ -256,8 +255,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
     background-color: white;
+    z-index: 1000;
   }
 
   .chat-msg {
@@ -266,10 +265,11 @@
     bottom: 60px;
     left: 0;
     right: 0;
+    padding: 10px 0;
     overflow-y: auto;
     display: flex;
     flex-direction: column-reverse;
-    padding: 10px 0;
+    scroll-behavior: smooth;
   }
 
   .chat-user .arrow {
@@ -278,9 +278,5 @@
 
   .chat-user .help {
     display: none;
-  }
-
-  .s-msg, .r-msg {
-    margin-top: 10px;
   }
 }
