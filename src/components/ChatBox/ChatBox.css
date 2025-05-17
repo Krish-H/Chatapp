@@ -223,33 +223,53 @@
 }
 
 @media (max-width: 900px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
   .chat-box {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
- 
-    background-color: white; /* optional: ensure it's not transparent */
+    background-color: white;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
-  .chat-user{
+  .chat-user {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    height: 60px;
+    background-color: inherit;
   }
 
-  .chat-input{
+  .chat-input {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 999;
-    
+    height: 60px;
+    background-color: white;
+  }
+
+  .chat-msg {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 0;
   }
 
   .chat-user .arrow {
@@ -259,11 +279,8 @@
   .chat-user .help {
     display: none;
   }
-  .s-msg,.r-msg{
+
+  .s-msg, .r-msg {
     margin-top: 10px;
-  }
-  .chat-msg {
-    margin-bottom: 50px;
-    overflow-y: scroll;
   }
 }
