@@ -16,9 +16,6 @@ A modern, feature-rich real-time chat application built with React and Firebase.
 - **Sidebar Navigation:** Easy access to chats and contacts via sidebars.
 - **Search & Add Contacts:** Search for users and start new chats seamlessly.
 
-## Screenshots
-
-*(Add screenshots here)*
 
 ## Getting Started
 
@@ -108,9 +105,6 @@ index.html
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-## License
-
-*(Add your license here, e.g., MIT)*
 
 ## Author
 
